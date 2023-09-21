@@ -26,8 +26,6 @@ const lightbox = new SimpleLightbox('.gallery a', {
 formEl.addEventListener('submit', handleSearchQuery);
 loadMoreBtn.addEventListener('click', handleLoadMore);
 
-// Для того, щоб коректно працював плавний скролл, необхідно зафіксувати висоту картки.
-
 async function handleSearchQuery(evt) {
   evt.preventDefault();
   const searchQuery = evt.currentTarget.elements.searchQuery.value.trim();
