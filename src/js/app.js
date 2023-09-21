@@ -48,7 +48,6 @@ async function handleSearchQuery(evt) {
     galleryEl.innerHTML = createGalleryCards(data.hits);
 
     lightbox.refresh();
-    smoothScroll();
 
     if (!data.totalHits) {
       hideMoreBtn();
@@ -62,6 +61,7 @@ async function handleSearchQuery(evt) {
       return hideMoreBtn();
     }
 
+    smoothScroll();
     showMoreBtn();
     hideLoader();
   } catch (err) {
