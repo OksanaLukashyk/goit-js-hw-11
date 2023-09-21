@@ -39,7 +39,7 @@ const options = {
 
 export function handleSearchError() {
   loaderEl.classList.remove('active');
-  loaderEl.classList.add('is-hidden');
+  // loaderEl.classList.add('is-hidden');
   return Notify.failure(
     'Sorry, there are no images matching your search query. Please try again.',
     options

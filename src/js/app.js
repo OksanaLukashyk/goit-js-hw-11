@@ -61,9 +61,9 @@ async function handleSearchQuery(evt) {
       return hideMoreBtn();
     }
 
+    hideLoader();
     smoothScroll();
     showMoreBtn();
-    hideLoader();
   } catch (err) {
     console.log(err);
   }
