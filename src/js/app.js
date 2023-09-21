@@ -32,7 +32,7 @@ async function handleSearchQuery(evt) {
   evt.preventDefault();
   const searchQuery = evt.currentTarget.elements.searchQuery.value.trim();
   //   const searchQuery = evt.currentTarget.elements['searchQuery'].value.trim();
-  pixabayApi.page = 1;
+  pixabayApi.page = 12;
   pixabayApi.q = searchQuery;
   galleryEl.innerHTML = '';
 
@@ -75,7 +75,6 @@ async function handleLoadMore() {
     galleryEl.insertAdjacentHTML('beforeend', createGalleryCards(data.hits));
     lightbox.refresh();
     smoothScroll();
-    console.log(pixabayApi.page);
 
     if (pixabayApi.page === Math.ceil(data.totalHits / pixabayApi.perPage)) {
       handleLastPageMsg();

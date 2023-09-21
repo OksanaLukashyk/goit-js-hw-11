@@ -1,12 +1,12 @@
 /* Loader */
 .loader {
   display: none;
-  margin: 0 auto 15px;
+  margin: 150px auto 15px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   position: relative;
-  background: linear-gradient(0deg, rgba(255, 61, 0, 0.2) 33%, #ff3d00 100%);
+  /* background: linear-gradient(0deg, rgba(255, 61, 0, 0.2) 33%, #ff3d00 100%); */
   background: linear-gradient(
     0deg,
     rgba(67, 170, 254, 0.2) 33%,
@@ -34,7 +34,8 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #ffffff;
+  /* background: #ffffff; */
+  background-color: rgb(174, 217, 252);
 }
 
 @keyframes rotation {
@@ -51,8 +52,7 @@
 .search-form {
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   z-index: 999;
   overflow: hidden;
 
@@ -64,8 +64,7 @@
   padding: 30px;
   margin: 0 auto;
   width: 100%;
-  min-height: 50px;
-  border-radius: 20px;
+  min-height: 100px;
   background-color: rgb(135, 199, 255);
   box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.2), 5px 5px 10px rgba(0, 0, 0, 0.3);
 
@@ -82,7 +81,7 @@
   padding: 8px 10px;
   height: 36px;
 
-  border: 2px solid #b0aeae;
+  border: 2px solid #b0aeae45;
   outline: 0;
   border-radius: 50px;
   /* background: rgb(196, 224, 247); */
@@ -100,13 +99,16 @@
   font-style: italic;
 }
 
+/* Buttons */
+
 button {
   display: block;
   min-width: 100px;
   height: 36px;
   padding: 5px 10px;
 
-  border: 2px solid #b0aeae;
+  border: none;
+  /* border: 2px solid #b0aeae4c; */
   border-radius: 100px;
 
   background-color: rgba(67, 170, 254, 0.66);
@@ -128,6 +130,12 @@ button:focus {
   color: floralwhite;
   background-color: rgba(65, 162, 241, 0.9);
   border-color: transparent;
+}
+
+.load-more {
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .load-more.is-hidden {
