@@ -48,6 +48,7 @@ async function handleSearchQuery(evt) {
     galleryEl.innerHTML = createGalleryCards(data.hits);
 
     lightbox.refresh();
+    smoothScroll();
 
     if (!data.totalHits) {
       hideMoreBtn();
@@ -63,7 +64,6 @@ async function handleSearchQuery(evt) {
 
     showMoreBtn();
     hideLoader();
-    smoothScroll();
   } catch (err) {
     console.log(err);
   }
@@ -75,12 +75,11 @@ async function handleLoadMore() {
     const data = await pixabayApi.getPhotos();
     galleryEl.insertAdjacentHTML('beforeend', createGalleryCards(data.hits));
     lightbox.refresh();
-
+    smoothScroll();
     if (pixabayApi.page === Math.ceil(data.totalHits / pixabayApi.perPage)) {
       handleLastPageMsg();
       hideMoreBtn();
     }
-    smoothScroll();
   } catch (err) {
     console.log(err);
   }
