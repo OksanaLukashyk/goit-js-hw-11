@@ -59,6 +59,7 @@ async function handleSearchQuery(evt) {
     handleSearchSuccess(data.totalHits);
 
     if (data.total <= pixabayApi.perPage) {
+      hideLoader();
       return hideMoreBtn();
     }
 
