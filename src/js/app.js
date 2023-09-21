@@ -31,7 +31,7 @@ loadMoreBtn.addEventListener('click', handleLoadMore);
 async function handleSearchQuery(evt) {
   evt.preventDefault();
   const searchQuery = evt.currentTarget.elements.searchQuery.value.trim();
-  //   const searchQuery = evt.currentTarget.elements['searchQuery'].value.trim();
+  // const searchQuery = evt.currentTarget.elements['searchQuery'].value.trim();
   pixabayApi.page = 1;
   pixabayApi.q = searchQuery;
   galleryEl.innerHTML = '';
