@@ -17,6 +17,17 @@ export function hideLoader() {
   loaderEl.classList.remove('active');
 }
 
+export function smoothScroll() {
+  const { height: cardHeight } = document
+    .querySelector('.gallery')
+    .firstElementChild.getBoundingClientRect();
+
+  window.scrollBy({
+    top: cardHeight * 2,
+    behavior: 'smooth',
+  });
+}
+
 // Notify messages
 
 const options = {
@@ -40,7 +51,7 @@ export function handleSearchSuccess(itemsNum) {
 
 export function handleEmptyInputError() {
   loaderEl.classList.remove('active');
-  return Notify.warning('Please enter a valid search query name!', options);
+  return Notify.warning('Please enter a valid search query!', options);
 }
 
 export function handleLastPageMsg() {
@@ -49,15 +60,4 @@ export function handleLastPageMsg() {
     "We're sorry, but you've reached the end of search results.",
     options
   );
-}
-
-export function smoothScroll() {
-  const { height: cardHeight } = document
-    .querySelector('.gallery')
-    .firstElementChild.getBoundingClientRect();
-
-  window.scrollBy({
-    top: cardHeight * 2,
-    behavior: 'smooth',
-  });
 }

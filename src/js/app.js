@@ -37,6 +37,7 @@ async function handleSearchQuery(evt) {
   galleryEl.innerHTML = '';
 
   if (!searchQuery) {
+    hideMoreBtn();
     return handleEmptyInputError();
   }
 
@@ -57,12 +58,12 @@ async function handleSearchQuery(evt) {
 
     handleSearchSuccess(data.totalHits);
 
-    if (data.hits < pixabayApi.perPage) {
-      hideMoreBtn();
+    if (data.total <= pixabayApi.perPage) {
+      return hideMoreBtn();
     }
 
-    hideLoader();
     showMoreBtn();
+    hideLoader();
   } catch (err) {
     console.log(err);
   }
@@ -84,5 +85,3 @@ async function handleLoadMore() {
     console.log(err);
   }
 }
-
-// Для того, щоб коректно працював плавний скролл, необхідно зафіксувати висоту картки.
